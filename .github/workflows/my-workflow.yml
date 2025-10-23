@@ -12,4 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: ha-ha
+        id: joke
         uses: ./.github/actions/joke-action
+      - name: joke output
+        run: echo "This is the joke ${{ steps.joke.outputs.joke-text}}"
