@@ -1,17 +1,16 @@
-const request = require("request-promise");
+const axios = require("axios");
 
 const options = {
-  method: "GET",
-  uri: "https://icanhazdadjoke.com/",
+  method: 'get',
+  url: 'https://icanhazdadjoke.com',
   headers: {
-    Accept: "application/json",
-    "User-Agent": "Writing JavaScript action GitHub Skills course.",
-  },
-  json: true,
+    'Accept': 'application/json',
+    'User-Agent': 'Writing JavaScript action GitHub Skills course.',
+  }
 };
 
 async function getJoke() {
-  const res = await request(options);
+  const res = await axios(options);
   return res.joke;
 }
 
