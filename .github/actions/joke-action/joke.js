@@ -8,8 +8,8 @@ async function getJoke() {
       'User-Agent': 'Writing JavaScript action GitHub Skills course.'
     }
   });
-  console.log(res);
-  return res.joke;
+
+  return res.data.joke;
 }
 
 module.exports = getJoke;
