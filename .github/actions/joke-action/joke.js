@@ -1,16 +1,14 @@
 const axios = require("axios");
 
-const options = {
-  method: 'get',
-  url: 'https://icanhazdadjoke.com',
-  headers: {
-    'Accept': 'application/json',
-    'User-Agent': 'Writing JavaScript action GitHub Skills course.',
-  }
-};
-
 async function getJoke() {
-  const res = await axios(options);
+  const res = await axios.get(
+    'https://icanhazdadjoke.com/', {
+     headers: {
+      'Accept': 'application/json',
+      'User-Agent': 'Writing JavaScript action GitHub Skills course.'
+    }
+  });
+  console.log(res);
   return res.joke;
 }
 
